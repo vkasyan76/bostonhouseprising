@@ -5,6 +5,8 @@ Create a new environment
 ```
 conda create -p venv python==3.7 -y
 
+Jupyter Notebook:
+
 1	Create Panndas dataset: 	dataset=pd.DataFrame(boston.data,columns=boston.feature_names)
 2	Add Target to dataset:	dataset['Price']=boston.target
 3	Analyze Dataset using seaborn
@@ -16,3 +18,12 @@ conda create -p venv python==3.7 -y
 9   Pickling The Model file For Deployment: pickle.dump(regression,open('regmodel.pkl','wb')) / pickled_model=pickle.load(open('regmodel.pkl','rb'))
 10  Prediction with pickle model: pickled_model.predict(scaler.transform(boston.data[0].reshape(1,-1)))
 ```
+
+app.py connected to home.html
+
+1 app = Flask(**name**) / @app.route('/') / def home(): return render_template('home.html')
+2 @app.route('/predict_api', methods=['POST']) & use json data
+
+simple deployment
+
+1 Create Procfile with "web: gunicorn app:app"
