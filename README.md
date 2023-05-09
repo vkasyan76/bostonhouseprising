@@ -27,3 +27,9 @@ app.py connected to home.html
 simple deployment
 
 1 Create Procfile with "web: gunicorn app:app"
+
+Dockerfile deployment on heroku:
+
+1 Create Dockerfile
+2 Create .github/actions folder and main.yaml file with instructions for heroku
+3 Add heroku api_key, name and email to actions, secrets anf variables of the github repository
